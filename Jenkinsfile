@@ -30,7 +30,7 @@ pipeline {
         stage('Artifacts-Upload') {
             steps {
                 sh 'tag=$(git describe --tags)'
-                sh 'upload=$(curl -f -XPOST -H "Authorization: $token" -H "Content-Type:application/octet-stream" --data-binary @build/libs/caesar-cipher.jar "https://uploads.github.com/repos/MadumathiS/caesar-cipher-1/releases/$tag/assets?name=caesar-cipher.jar")'
+                sh 'upload=$(curl -f -XPOST -H "Authorization: $token" -H "Content-Type:application/octet-stream" --data-binary @build/libs/caesar-cipher.jar "https://uploads.github.com/repos/MadumathiS/caesar-cipher/releases/$tag/assets?name=caesar-cipher.jar")'
                 
             }
         }
